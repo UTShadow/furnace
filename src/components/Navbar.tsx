@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {Icons} from './ui/Icons'
+import {Icons} from './Icons'
 import { buttonVariants } from './ui/Button'
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
 
         {/*search bar */}
 
-        <Link href='/sign-in' className={buttonVariants()}></Link>
+        <Link href='/sign-in' className={buttonVariants()}>Sign In</Link>
       </div>
     </div>
   )
