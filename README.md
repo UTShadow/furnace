@@ -1,1 +1,3 @@
 in progress...
+
+Problems with parallel routing in web browser ///for further investigation

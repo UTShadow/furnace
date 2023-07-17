@@ -31,7 +31,7 @@ export default function RootLayout({
         arimo.className
       )}>
       <body className='min-h-screen pt-12 bg-slate-50 antialiased'>
-       
+     
           <Navbar />
           {authModal}
 
