@@ -41,7 +41,7 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
           </DropdownMenuItem>
   
           <DropdownMenuItem asChild>
-            <Link href='/r/create'>Create Community</Link>
+            <Link href='/f/create'>Create Community</Link>
           </DropdownMenuItem>
   
           <DropdownMenuItem asChild>
