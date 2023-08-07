@@ -39,6 +39,7 @@
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
+    "editorjs-react-renderer": "^3.5.1",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",

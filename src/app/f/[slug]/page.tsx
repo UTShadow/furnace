@@ -3,6 +3,7 @@ import { db } from '@/lib/db'
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from '@/config'
 import { notFound } from 'next/navigation'
 import MiniCreatePost from '@/components/MiniCreatePost'
+import PostFeed from '@/components/PostFeed'
 
 interface PageProps {
     params: {
@@ -36,9 +37,10 @@ const page = async ({params}: PageProps) => {
   return( 
     <>
         <h1 className='font-bold text-3x1 md:text-4x1 h-14'>
-            {thread.name}
+            f/{thread.name}
         </h1>
         <MiniCreatePost session={session}/>
+        <PostFeed initialPosts={thread.posts} threadName={thread.name}/>
     </>
   )
 }
