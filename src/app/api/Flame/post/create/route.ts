@@ -1,6 +1,7 @@
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { ThreadSubscriptionValidator } from "@/lib/validators/flame";
+import { PostValidator } from "@/lib/validators/post";
 import { z } from "zod"
 
 export async function POST(req: Request) {
@@ -13,7 +14,7 @@ export async function POST(req: Request) {
 
         const body = await req.json()
 
-        const {threadId} = ThreadSubscriptionValidator.parse(body)
+        const {threadId, title, content} = PostValidator.parse(body)
 
         const subscriptionExists = await db.subscription.findFirst({
             where: {
@@ -22,24 +23,28 @@ export async function POST(req: Request) {
             },
         })
 
-        if(subscriptionExists) {
-            return new Response('You are already subscribed to this Flame.', {
+        if(!subscriptionExists) {
+            return new Response('Subscribe to post', {
                 status: 400,
             })
         }
 
-        await db.subscription.create({
+        await db.post.create({
             data: {
-                threadId,
-                userId: session.user.id,
-            }
+                title,
+                content,
+                authorId: session.user.id,
+                threadId
+            },
         })
-        return new Response(threadId)
+
+        
+        return new Response('OK')
     } catch (error) {
-        (error)
+        
         if(error instanceof z.ZodError) {
-            return new Response('Invalid request data passed', {status: 422 })
+            return new Response('Invalid POST request data passed', {status: 422 })
         }
-        return new Response('Could not create Flame', {status: 500})
+        return new Response('Could not post to Flame this tiem, please try again later', {status: 500})
     }
 }

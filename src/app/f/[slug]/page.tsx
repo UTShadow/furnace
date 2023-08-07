@@ -27,7 +27,7 @@ const page = async ({params}: PageProps) => {
                     thread: true,
                 },
 
-                take: INFINITE_SCROLL_PAGINATION_RESULTS
+                take: INFINITE_SCROLL_PAGINATION_RESULTS,
             },
         },
     })
@@ -36,7 +36,7 @@ const page = async ({params}: PageProps) => {
   return( 
     <>
         <h1 className='font-bold text-3x1 md:text-4x1 h-14'>
-            f/{thread.name}
+            {thread.name}
         </h1>
         <MiniCreatePost session={session}/>
     </>

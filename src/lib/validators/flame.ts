@@ -5,7 +5,7 @@ export const ThreadValidator = z.object({
 })
 
 export const ThreadSubscriptionValidator = z.object({
-    threadId: z.string()
+    threadId: z.string(),
 })
 
 export type CreateThreadPayload = z.infer<typeof ThreadValidator>

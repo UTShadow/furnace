@@ -27,7 +27,7 @@ export default function Home() {
         <Link 
           className={buttonVariants({className: 'w-full mt-4 mb-6'
         })} 
-        href='/f/create'>
+        href={'/f/create'}>
         Create Your own flame
         </Link>
         

@@ -11,13 +11,15 @@ import { toast } from '@/hooks/use-toast'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { usePathname, useRouter } from 'next/navigation'
+import { z } from 'zod'
 
+type FormData = z.infer<typeof PostValidator>
 
 interface EditorProps {
     threadId: string
 }
 
-const Editor: FC<EditorProps> = ({threadId}) => {
+export const Editor: FC<EditorProps> = ({threadId}) => {
   
     const {
         register,
@@ -106,6 +108,7 @@ const Editor: FC<EditorProps> = ({threadId}) => {
     useEffect(() => {
         if(Object.keys(errors).length) {
             for(const [_key, value] of Object.entries(errors)) {
+                value
                 toast({
                     title: 'Something went wrong',
                     description: (value as { message: string}).message,
@@ -135,11 +138,11 @@ const Editor: FC<EditorProps> = ({threadId}) => {
     }, [isMounted, initializeEditor])
 
     const {mutate: createPost} = useMutation({
-        mutationFn: async ({title, content,threadId}: PostCreationRequest) =>{
+        mutationFn: async ({title, content, threadId}: PostCreationRequest) => {
             const payload: PostCreationRequest = {
                 threadId, title ,content,
             }
-            const {data} = await axios.post('/api/Flame/post/create', payload) 
+            const { data } = await axios.post('/api/Flame/post/create', payload) 
             return data
         },
         onError: () => {
@@ -193,6 +196,7 @@ const Editor: FC<EditorProps> = ({threadId}) => {
                         // @ts-ignore
                         _titleRef.current = e
                     }}
+                    {...rest}
                     placeholder='Title' 
                     className='w-full resize-none appearance-none overflow-hidden bg-transparent text-5x1 font-bold focus:outline-none'
                 />
@@ -202,5 +206,3 @@ const Editor: FC<EditorProps> = ({threadId}) => {
     </div>
   )
 }
-
-export default Editor

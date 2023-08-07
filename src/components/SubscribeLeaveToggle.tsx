@@ -18,7 +18,7 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
     threadId,
     isSubscribed,
     threadName,
-}) => {
+}: SubscribeLeaveToggleProps) => {
 
     
     const { toast } = useToast()
@@ -91,9 +91,9 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
     })
 
   return isSubscribed ? (
-  <Button className='w-full mt-1 mb-4'>Leave comunity</Button>
+  <Button isLoading = {isUnSubLoading} onClick = {() => unSubscribe()} className='w-full mt-1 mb-4'>Leave comunity</Button>
   ) : (
-  <Button isLoading = {isUnSubLoading} onClick = {() => unSubscribe()} className='w-full mt-1 mb-4'>Join to post</Button>
+  <Button isLoading = {isSubLoading} onClick = {() => subscribe()} className='w-full mt-1 mb-4'>Join to post</Button>
   )
 }
 

@@ -1,15 +1,15 @@
-import Editor from '@/components/Editor'
+import { Editor } from '@/components/Editor'
 import { Button } from '@/components/ui/Button'
 import { db } from '@/lib/db'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-interface PageProps{
+interface pageProps{
     params: { 
         slug: string
     }
 }
-const page = async ({ params }: PageProps ) => {
+const page = async ({ params }: pageProps ) => {
 
     const thread = await db.thread.findFirst({
         where: {
