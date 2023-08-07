@@ -36,10 +36,9 @@ export async function POST(req: Request) {
         })
         return new Response(threadId)
     } catch (error) {
-        (error)
         if(error instanceof z.ZodError) {
             return new Response('Invalid request data passed', {status: 422 })
         }
-        return new Response('Could not create Flame', {status: 500})
+        return new Response('Could not register vote, please try again.', {status: 500})
     }
 }
