@@ -14,8 +14,8 @@ const Navbar = async () => {
       <div className='container max-w-7x1 h-full mx-auto flex items-center justify-between gap-2'>
         
         <Link href='/' className='flex gap-2 items-center'>
-          <Icons.logo className='h-8 w-8 sm:h-6 sm:w-6'/>
-          <p className='hidden text-zinc-700 text-sm font-medium md:block'>Furnace</p>
+          <Icons.logo className='h-12 w-12 sm:h-10 sm:w-10'/>
+          <p className='hidden text-zinc-700 text-xl font-medium md:block'>Furnace</p>
         </Link>
 
         

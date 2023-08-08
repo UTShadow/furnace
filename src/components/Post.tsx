@@ -46,7 +46,7 @@ const Post: FC<PostProps> = ({
                         <span className="px-1">~</span>
                         </>
                     ) : null}
-                    <span>Posted by user/{post.author.name}</span>{' '}
+                    <span>Posted by {post.author.name}</span>{' '}
                     {formatTimeToNow(new Date(post.createdAt))}
                 </div>
                 <a href={`/f/${threadName}/post/${post.id}`}>
