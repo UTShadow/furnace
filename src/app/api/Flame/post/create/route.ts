@@ -1,6 +1,5 @@
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { ThreadSubscriptionValidator } from "@/lib/validators/flame";
 import { PostValidator } from "@/lib/validators/post";
 import { z } from "zod"
 

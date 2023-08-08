@@ -1,9 +1,12 @@
-import { buttonVariants } from "@/components/ui/Button";
+import { buttonVariants } from "@/components/ui/Button"
 import Link from 'next/link'
-import { Home as HomeIcon } from 'lucide-react'
-import { getAuthSession } from "@/lib/auth";
-import GeneralFeed from "@/components/GeneralFeed";
-import CustomFeed from "@/components/CustomFeed";
+
+import { getAuthSession } from "@/lib/auth"
+import GeneralFeed from "@/components/GeneralFeed"
+import CustomFeed from "@/components/CustomFeed"
+import { HomeIcon } from "lucide-react"
+
+
 
 export default async function Home() {
 
