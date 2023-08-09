@@ -1,7 +1,9 @@
+import EditorOutput from "@/components/EditorOutput"
 import PostVoteServer from "@/components/post-vote/PostVoteServer"
 import { buttonVariants } from "@/components/ui/Button"
 import { db } from "@/lib/db"
 import { redis } from "@/lib/redis"
+import { formatTimeToNow } from "@/lib/utils"
 import { CachedPost } from "@/types/redis"
 import { Vote, Post, User } from "@prisma/client"
 import { ArrowBigUp, Loader2, ArrowBigDown } from "lucide-react"
@@ -57,7 +59,16 @@ const page = async ({params} : PageProps) => {
                         })
                     } }/>
                 </Suspense>
-                
+                <div className="sm:w-0 w-full flex-1 bg-white p-4 rounded-sm">
+                    <p className="max-h-40 mt-1 truncate text-xs text-gray-500">
+                        Posted by {post?.author.username ?? cachedPost.authorUsername}
+                        {formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}
+                    </p>
+                    <h1 className="text-x1 font-semibold py-2 leading-6 text-gray-900">
+                        {post?.title ?? cachedPost.title}
+                    </h1>
+                    <EditorOutput content={post?.content ?? cachedPost.content}/>
+                </div>
             </div>
         </div>  
     )
