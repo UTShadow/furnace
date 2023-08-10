@@ -1,4 +1,4 @@
-import { VoteType, Vote, Post } from "@prisma/client";
+import { Vote, Post, VoteType } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import PostVoteClient from "./PostVoteClient";
@@ -11,7 +11,8 @@ interface PostVoteServerProps {
     getData?: () => Promise<(Post & { votes: Vote[]}) | null>
     
 }
- 
+
+
 const PostVoteServer = async ({
     postId, initialVotesAmt, initialVote, getData,
 }: PostVoteServerProps) => {
@@ -21,6 +22,7 @@ const PostVoteServer = async ({
     let _currentVote: VoteType | null | undefined = undefined
 
     if (getData) {
+        
         const post = await getData()
         if(!post) return notFound()
 
