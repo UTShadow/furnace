@@ -4,7 +4,7 @@ import { CommentValidator } from "@/lib/validators/comment"
 import { z } from "zod"
 
 
-export async function PPATCH(req: Request) {
+export async function PATCH(req: Request) {
     try {
         const body = await req.json()
 
