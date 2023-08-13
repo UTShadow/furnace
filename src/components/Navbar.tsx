@@ -4,6 +4,7 @@ import {Icons} from './Icons'
 import { buttonVariants } from './ui/Button'
 import { getAuthSession } from '@/lib/auth'
 import { UserAccountNav } from './UserAccountNav'
+import SearchBar from './SearchBar'
 
 const Navbar = async () => {
 
@@ -15,10 +16,12 @@ const Navbar = async () => {
         
         <Link href='/' className='flex gap-2 items-center'>
           <Icons.logo className='h-12 w-12 sm:h-10 sm:w-10'/>
-          <p className='hidden text-zinc-700 text-xl font-medium md:block'>Furnace</p>
+          <p className='hidden text-zinc-700 text-xl font-medium md:block'>
+            Furnace
+          </p>
         </Link>
 
-        
+        <SearchBar/>
 
         {session?.user ? (
          
