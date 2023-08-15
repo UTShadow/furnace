@@ -31,5 +31,9 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off",
+        "no-console": ["warn"],
+        "no-unused-vars": ["warn"]
     }
 }
