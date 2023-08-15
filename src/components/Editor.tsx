@@ -165,7 +165,7 @@ export const Editor: FC<EditorProps> = ({threadId}) => {
         }
     })
 
-    async function onSubmit(data: PostCreationRequest){
+    async function onSubmit(data: FormData){
         const blocks = await ref.current?.save()
 
         const payload: PostCreationRequest ={

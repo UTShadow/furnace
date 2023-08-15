@@ -19,7 +19,7 @@ export default async function Home() {
     {session ? <CustomFeed/> : <GeneralFeed />}
     
 
-    {/* thread info */}
+
     <div className="overflow-hidden h-fit rounded-lg border border-gray-400 order-first md:order-last">
       <div className="bg-orange-500 px-6 py-4">
         <p className="font-semibold text-xl py-3 flex items-center gap-1.5">

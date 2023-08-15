@@ -1,7 +1,7 @@
 import { getAuthSession } from "@/lib/auth"
 import { db } from "@/lib/db"
 
-import { CommentVoteValidator, PostVoteValidator } from "@/lib/validators/vote"
+import { CommentVoteValidator } from "@/lib/validators/vote"
 
 import { z } from "zod"
 

@@ -1,9 +1,9 @@
 
+import { getToken } from "next-auth/jwt";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
  
 const f = createUploadthing();
  
-const auth = (req: Request) => ({ id: "fakeId" }); 
  
 
 export const ourFileRouter = {
@@ -11,7 +11,7 @@ export const ourFileRouter = {
 
 
     .middleware(async ( req ) => {
-      const user = await auth(req)
+      const user = await getToken({ req })
       if (!user) throw new Error("Unauthorized")
       return { userId: user.id }
     })

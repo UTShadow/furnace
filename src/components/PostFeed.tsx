@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import {FC, useEffect, useRef} from 'react'
 import Post from './Post'
+import { Loader2 } from 'lucide-react'
 
 interface PostFeedProps {
     initialPosts: ExtendedPost[]
@@ -87,6 +88,11 @@ const PostFeed: FC<PostFeedProps> = ({initialPosts, threadName}) => {
             )
         }
     })}
+     {isFetchingNextPage && (
+        <li className='flex justify-center'>
+          <Loader2 className='w-6 h-6 text-zinc-500 animate-spin' />
+        </li>
+      )}
   </ul>
   ) 
 }
