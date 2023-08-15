@@ -45,6 +45,7 @@
     "editorjs-react-renderer": "^3.5.1",
     "eslint-config-next": "^13.4.13",
     "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "lodash.debounce": "^4.0.8",
     "lucide": "^0.265.0",
     "lucide-react": "^0.221.0",
