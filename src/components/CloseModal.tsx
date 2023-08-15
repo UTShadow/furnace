@@ -1,8 +1,6 @@
 'use client'
 
 import { X } from 'lucide-react'
-/*for future*/
-
 import { Button } from './ui/Button'
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'

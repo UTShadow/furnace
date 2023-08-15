@@ -38,8 +38,8 @@ const page = async ({params}: PageProps) => {
 
   return( 
     <>
-        <h1 className='font-bold text-3x1 md:text-4x1 h-14'>
-            f/{thread.name}
+        <h1 className='font-bold text-3xl  md:text-4xl h-14'>
+           <a className='text-orange-500'>f</a>/{thread.name}
         </h1>
         <MiniCreatePost session={session}/>
         <PostFeed initialPosts={thread.posts} threadName={thread.name}/>

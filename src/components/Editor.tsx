@@ -198,7 +198,7 @@ export const Editor: FC<EditorProps> = ({threadId}) => {
                     }}
                     {...rest}
                     placeholder='Title' 
-                    className='w-full resize-none appearance-none overflow-hidden bg-transparent text-5x1 font-bold focus:outline-none'
+                    className='w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none'
                 />
                 <div id='editor' className='min-h-[500px]'/>
             </div>

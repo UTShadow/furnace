@@ -65,7 +65,7 @@ const page = async ({params} : PageProps) => {
                         Posted by {post?.author.username ?? cachedPost.authorUsername}
                         {formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}
                     </p>
-                    <h1 className="text-x1 font-semibold py-2 leading-6 text-gray-900">
+                    <h1 className="text-xl font-semibold py-2 leading-6 text-gray-900">
                         {post?.title ?? cachedPost.title}
                     </h1>
                     <EditorOutput content={post?.content ?? cachedPost.content}/>
