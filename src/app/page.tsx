@@ -7,6 +7,8 @@ import CustomFeed from "@/components/CustomFeed"
 import { HomeIcon } from "lucide-react"
 
 
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
 export default async function Home() {
 

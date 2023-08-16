@@ -13,9 +13,11 @@ interface SearchBarProps {
     
 }
  
-const SearchBar: FC<SearchBarProps> = () => {
+const SearchBar: FC<SearchBarProps> = ({}) => {
     const [input, setInput] = useState<string>('')
-
+    const router = useRouter()
+    const commandRef = useRef<HTMLDivElement>(null)
+    const pathname = usePathname() 
    
 
     const {
@@ -43,12 +45,6 @@ const SearchBar: FC<SearchBarProps> = () => {
         request()
     }, [])
 
-    const router = useRouter()
-
-    const commandRef = useRef<HTMLDivElement>(null)
-
-    const pathname = usePathname() 
-
     useOnClickOutside(commandRef, () => {
         setInput('')
     })
@@ -70,7 +66,7 @@ const SearchBar: FC<SearchBarProps> = () => {
             placeholder="Search communities"
         />
 
-        {input.length > 0 ? (
+        {input.length > 0 && (
             <CommandList className="absolute bg-white top-full inset-x-0 shadow rounded-b-md">
                 {isFetched && <CommandEmpty>no results found.</CommandEmpty>}
                 {(queryResults?.length ?? 0) > 0 ? (
@@ -87,13 +83,10 @@ const SearchBar: FC<SearchBarProps> = () => {
                             </CommandItem>
                         ))}
                     </CommandGroup>
-                ): null}
+                ) : null}
 
             </CommandList>
-        ): null}
-            
-
-        
+        )}
     </Command>  
     )
 }

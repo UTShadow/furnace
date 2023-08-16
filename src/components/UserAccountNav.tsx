@@ -45,7 +45,7 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
           </DropdownMenuItem>
   
           <DropdownMenuItem asChild>
-            <Link href='/settings'>Settings</Link>
+            <Link href='/settings'>Change Name</Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem

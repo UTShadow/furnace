@@ -2,14 +2,16 @@ import { INFINITE_SCROLL_PAGINATION_RESULTS } from "@/config"
 import { db } from "@/lib/db"
 import PostFeed from "./PostFeed"
 import { getAuthSession } from "@/lib/auth"
+import { notFound } from "next/navigation"
 
 const CustomFeed = async () => {
 
     const session = await getAuthSession()
+    if(!session) return notFound()
 
     const followedComunities = await db.subscription.findMany({
         where: {
-            userId: session?.user.id
+            userId: session.user.id
         },
         include: {
             thread: true,
@@ -20,7 +22,7 @@ const CustomFeed = async () => {
         where: {
             thread: {
                 name: {
-                    in: followedComunities.map(({ thread }) => thread.id),
+                    in: followedComunities.map((sub) => sub.thread.id),
                 },
             },
         },

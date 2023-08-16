@@ -1,7 +1,8 @@
+
 import { Editor } from '@/components/Editor'
 import { Button } from '@/components/ui/Button'
 import { db } from '@/lib/db'
-import { notFound } from 'next/navigation'
+import { notFound} from 'next/navigation'
 import React from 'react'
 
 interface pageProps{
@@ -9,6 +10,7 @@ interface pageProps{
         slug: string
     }
 }
+
 const page = async ({ params }: pageProps ) => {
 
     const thread = await db.thread.findFirst({
@@ -34,8 +36,10 @@ const page = async ({ params }: pageProps ) => {
         
         <Editor threadId={thread.id}/>
 
-        <div className='w-full flex justify-end'>
-            <Button type='submit' className='w-full' form='thread-post-form'>
+        <div className='w-full flex flex-col justify-end'>
+            
+        
+            <Button type='submit' className='w-full py-2' form='thread-post-form'>
                 Post
             </Button>
         </div>

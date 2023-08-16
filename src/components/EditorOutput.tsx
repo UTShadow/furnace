@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Output = dynamic(async () => (await import('editorjs-react-renderer')).default,
     {
-        ssr: false,
+        ssr: false
     }
 )
 
@@ -28,6 +28,7 @@ const renderers = {
 const EditorOutput: FC<EditorOutputProps> = ({ content}) => {
     return ( 
         <Output 
+            style={style}
             data={content} 
             className='text-sm' 
             renderers={renderers}

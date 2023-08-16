@@ -15,6 +15,7 @@ import { useMutation } from "@tanstack/react-query";
 import { CommentRequest } from "@/lib/validators/comment";
 import axios from "axios";
 import { toast } from "@/hooks/use-toast";
+import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 
 
 type ExtendedComent = Comment & {
@@ -40,7 +41,11 @@ const PostComment: FC<PostCommentProps> = ({
     const router = useRouter()
     const { data: session } = useSession() 
     const [isReplying, setIsReplying] = useState<boolean>(false)
-    const[input, setInput] = useState<string>('')
+    const[input, setInput] = useState<string>(`@${comment.author.username}`)
+
+    useOnClickOutside(commentRef, () => {
+        setIsReplying(false)
+      })
 
     const {mutate: postComment, isLoading} = useMutation({
         mutationFn: async ({postId, text , replyToId}: CommentRequest) => {
@@ -102,18 +107,26 @@ const PostComment: FC<PostCommentProps> = ({
                     <MessageSquare className="h-4 w-4 mr-1.5"/>
                     Reply
                 </Button>
+                </div>
                 {isReplying ? (
                     <div className="grid w-full gap-1.5">
                     <Label htmlFor='comment' >Your comment</Label>
                     <div className="mt-2">
                         <Textarea 
+                          onFocus={(e) =>
+                            e.currentTarget.setSelectionRange(
+                              e.currentTarget.value.length,
+                              e.currentTarget.value.length
+                            )
+                          }
+                          autoFocus
                             id='comment' 
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             rows={1}
                             placeholder='What would you like to say?'
                         />
-                        <div className="mt-2 flex justify-end">
+                        <div className="mt-2 flex justify-end gap-2">
                             <Button 
                                 tabIndex={-1} 
                                 variant='subtle' 
@@ -132,12 +145,14 @@ const PostComment: FC<PostCommentProps> = ({
                                 })
                                 
                             }}>
-                            Post</Button>
+                                Post
+                            </Button>
                         </div>
                     </div>
-                </div> 
-                ) : null }
-            </div>
+                    </div> 
+                
+                
+            ) : null }
         </div> 
     )
 }
