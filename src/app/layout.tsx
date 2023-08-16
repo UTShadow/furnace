@@ -30,10 +30,10 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'bg-white text-slate-900 antialiased light',
+        'bg-white text-slate-900 antialiased light no-scrollbar',
         arimo.className
       )}>
-      <body className='min-h-screen pt-12 bg-slate-50 antialiased'>
+      <body className='min-h-screen pt-12 bg-slate-50 antialiased '>
           <Providers>
           <Navbar />
           {authModal}
