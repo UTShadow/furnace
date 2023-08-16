@@ -47,7 +47,7 @@ const page = async ({params} : PageProps) => {
         if (!post && !cachedPost) return notFound()
     return (
         <div>
-            <div className="h-full flex flex-col sm:flex-row items-center sm:items-start justify-between">
+            <div className="h-full flex flex-row sm:items-start justify-between">
                 <Suspense fallback={<PostVoteShell/>}>
                     <PostVoteServer postId={post?.id ?? cachedPost.id} getData={async () => {
                         return await db.post.findUnique({
