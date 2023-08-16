@@ -57,14 +57,17 @@ const Post: FC<PostProps> = ({
                         {post.title}
                     </h1>
                 </a>
+                
                 <div className="relative text-sm max-h-40 w-full overflow-clip" 
                     ref={pRef}>
-
+                        <a href={`/f/${threadName}/post/${post.id}`}>
                         <EditorOutput content={post.content}/>
                         {pRef.current?.clientHeight === 160 ? (
                             <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent"/>
                         ) : null}
+                        </a>
                 </div>
+                
             </div>
         </div>
         <div className="bg-orange-500 z-20 text-sm p-4 sm:px-6">
