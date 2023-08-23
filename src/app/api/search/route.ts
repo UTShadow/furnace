@@ -9,7 +9,9 @@ export async function GET(req: Request) {
     const results = await db.thread.findMany({
         where: {
             name: {
-                startsWith: q,
+                
+                contains: q,
+                
             },
         },
         include: {
