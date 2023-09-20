@@ -31,7 +31,7 @@ export async function POST(req: Request) {
             },
         })
 
-        await db.subscription. create({
+        await db.subscription.create({
             data:{
                 userId: session.user.id,
                 threadId: thread.id,

@@ -16,6 +16,8 @@ import { CommentRequest } from "@/lib/validators/comment";
 import axios from "axios";
 import { toast } from "@/hooks/use-toast";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
+import DeleteComment from "./DeleteComment";
+
 
 
 type ExtendedComent = Comment & {
@@ -31,6 +33,7 @@ interface PostCommentProps{
     
     
 }
+
  
 const PostComment: FC<PostCommentProps> = ({
     comment, votesAmt, currentVote, postId
@@ -101,12 +104,22 @@ const PostComment: FC<PostCommentProps> = ({
                 initialVote={currentVote}
                 />
                 <Button onClick={() => {
+                    
                     if(!session) return router.push('/sign-in')
                     setIsReplying(true)
                 }} variant='ghost' size='xs'>
                     <MessageSquare className="h-4 w-4 mr-1.5"/>
                     Reply
+                   
                 </Button>
+                {comment.authorId === session?.user?.id ?( 
+                    <DeleteComment 
+                    commentId={comment.id} 
+                    
+                    />          
+                    ): null}
+              
+                
                 </div>
                 {isReplying ? (
                     <div className="grid w-full gap-1.5">
