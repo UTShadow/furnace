@@ -7,7 +7,7 @@ A non-comercial project of a forum based on Reddit, where you can post all of yo
 ___
 
 # Preview
-![furnace showcase layout](/public/furnacePIC.png "furnace showcase layout")
+![furnace showcase layout](./src/public/furnacePIC.png "furnace showcase layout")
 
 # Features
 - Authentication using Google account.
