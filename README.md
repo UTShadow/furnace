@@ -5,17 +5,38 @@ A non-comercial project of a forum based on Reddit, where you can post all of yo
 
 ___
 
-## Stack
+# Preview
 
-> - Next.js
-> - Typescript
-> - Tailwind
-> - Prisma
-> - Axios
-> - Shadcn
-> - Zod
-> - Uploadthing
-> - NextAuth
+# Features
+- Authentication using Google account.
+- Infinite scrolling for dynamically loading posts.
+- Highly functional post editor witch includes adding:
+    - text
+    - tables
+    - code
+    - images
+    - lists
+    - links
+- Commenting and nesting replies.
+- Voting for posts and comments.
+- Custom feed.
+- Changing username
+- Deleting comments (only without replies)
+- Search bar for threats (looking by letters included)
+# 
+
+# Stack
+
+- Next.js
+- Typescript
+- Tailwind
+- Prisma
+- Axios
+- Zod
+- Uploadthing
+- NextAuth
+- Shadcn
+
 
 
 
