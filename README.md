@@ -2,10 +2,12 @@
 ___
 
 A non-comercial project of a forum based on Reddit, where you can post all of your hot takes on every subject.
+[Furnace](https://furnace-xi.vercel.app/ "For all your hot takes").
 
 ___
 
 # Preview
+![furnace showcase layout](/public/furnacePIC.png "furnace showcase layout")
 
 # Features
 - Authentication using Google account.
@@ -23,7 +25,7 @@ ___
 - Changing username
 - Deleting comments (only without replies)
 - Search bar for threats (looking by letters included)
-# 
+
 
 # Stack
 
