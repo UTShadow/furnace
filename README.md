@@ -7,7 +7,7 @@ A non-comercial project of a forum based on Reddit, where you can post all of yo
 ___
 
 # Preview
-![furnace showcase layout](./src/public/furnacePIC.png "furnace showcase layout")
+![furnace showcase layout](./src/public/furnacePIC.png "furnace showcase layout"){target="_blank"}
 
 # Features
 - Authentication using Google account.
@@ -46,6 +46,17 @@ Problems with parallel routing in web browser:
 > After creating a modal window with parallel routing, its necessary to create a new .next file. 
 
 # Future Changes
--
+- roles for moderators and admins
+- improved search bar
+- imporved custom feed 
+- styling for text in posts
+- emotes for coments
+- reactions for coments
+- dark mode
+- rating system for users
+- following users
+- more options for login
+- more customization for threads
+
 # License
 > [MIT](https://choosealicense.com/licenses/mit/)
