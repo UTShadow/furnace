@@ -2,12 +2,12 @@
 ___
 
 A non-comercial project of a forum based on Reddit, where you can post all of your hot takes on every subject.
-[Furnace](https://furnace-xi.vercel.app "For all your hot takes")
+<a href="https://furnace-xi.vercel.app" target="_blank">Furnace</a>
 
 ___
 
 # Preview
-![furnace showcase layout](./src/public/furnacePIC.png "furnace showcase layout"){target="_blank"}
+![furnace showcase layout](./src/public/furnacePIC.png "furnace showcase layout")
 
 # Features
 - Authentication using Google account.
