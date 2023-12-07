@@ -2,7 +2,7 @@
 ___
 
 A non-comercial project of a forum based on Reddit, where you can post all of your hot takes on every subject.
-[Furnace](https://furnace-xi.vercel.app/ "For all your hot takes").
+[Furnace](https://furnace-xi.vercel.app "For all your hot takes")
 
 ___
 
@@ -40,8 +40,12 @@ ___
 - Shadcn
 
 
-
-
+# Known Issues
 
 Problems with parallel routing in web browser: 
 > After creating a modal window with parallel routing, its necessary to create a new .next file. 
+
+# Future Changes
+-
+# License
+> [MIT](https://choosealicense.com/licenses/mit/)
