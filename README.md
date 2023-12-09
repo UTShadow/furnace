@@ -12,7 +12,7 @@ ___
 # Features
 - Authentication using Google account.
 - Infinite scrolling for dynamically loading posts.
-- Highly functional post editor witch includes adding:
+- Highly functional post editor which includes adding:
     - text
     - tables
     - code
@@ -43,7 +43,7 @@ ___
 # Known Issues
 
 Caching data for post likes 
-> despite asigned user id likes arent highlited in post route. In some cases count 
+> despite assigned user id likes arent highlited in post route .
 
 ## Solved
 
