@@ -2,7 +2,7 @@
 ___
 
 A non-comercial project of a forum based on Reddit, where you can post all of your hot takes on every subject.
-<a href="https://furnace-xi.vercel.app" target="_blank">Furnace</a>
+[Furnace](https://furnace-xi.vercel.app "for all your hot takes")
 
 ___
 
@@ -41,6 +41,11 @@ ___
 
 
 # Known Issues
+
+Caching data for post likes 
+> despite asigned user id likes arent highlited in post route. In some cases count 
+
+## Solved
 
 Problems with parallel routing in web browser: 
 > After creating a modal window with parallel routing, its necessary to create a new .next file. 
