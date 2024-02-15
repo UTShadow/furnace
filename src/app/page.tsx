@@ -1,26 +1,24 @@
 import { buttonVariants } from "@/components/ui/Button"
 import Link from 'next/link'
-
+import CustomFeed from "@/components/CustomFeed"
 import { getAuthSession } from "@/lib/auth"
 import GeneralFeed from "@/components/GeneralFeed"
-import CustomFeed from "@/components/CustomFeed"
 import { HomeIcon } from "lucide-react"
-
 
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
 
 export default async function Home() {
-
   const session = await getAuthSession()
+  const radiobutton: boolean = false 
+  
   return ( 
     <>
   <h1 className="font-bold text-3xl md:text-4xl">
   Your <a className="text-orange-500">f</a>eed</h1>
   <div className='grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6'>
-    {session ? <CustomFeed/> && <GeneralFeed />  : <GeneralFeed />}
     
-
+   { !session  ? <GeneralFeed/> : <CustomFeed/>}
 
     <div className="overflow-hidden h-fit rounded-lg border border-gray-400 order-first md:order-last">
       <div className="bg-orange-500 px-6 py-4">

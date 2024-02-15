@@ -5,11 +5,12 @@ import { z } from "zod"
 export async function GET(req: Request) {
     const url = new URL(req.url)
 //checking for login user
+
     const session = await getAuthSession()
 //checking for followed threads(flames)
     let followedCommunitiesIds: string[] = []
 
-    if(session) {
+    if(session ) {
         const followedCommunities = await db.subscription.findMany({
             where: {
                 userId: session.user.id,

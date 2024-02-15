@@ -5,17 +5,21 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import {UserAvatar} from './UserAvatar'
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
-
+import { Checkbox } from './ui/Checkbox'
+import { useState } from 'react'
 
 interface UserAccountNavProps {
     user: Pick<User, 'name' | 'image' | 'email'>
 }
-
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
     user: Pick<User, 'name' | 'image' | 'email'>
-  }
-  
-  export function UserAccountNav({ user }: UserAccountNavProps) {
+}
+  export  function UserAccountNav({ user}: UserAccountNavProps) {
+    const [feed, setFeed] = useState(false);
+    const handleChange = () => {
+      setFeed(!feed);
+      return (feed)
+    }
     return (
       <DropdownMenu>
         <DropdownMenuTrigger>
@@ -27,7 +31,11 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
         <DropdownMenuContent className='bg-white' align='end'>
           <div className='flex items-center justify-start gap-2 p-2'>
             <div className='flex flex-col space-y-1 leading-none'>
-              {user.name && <p className='font-medium'>{user.name}</p>}
+              {user.name && (
+                <p className='font-medium'>
+                  {user.name}
+                </p>
+              )}
               {user.email && (
                 <p className='w-[200px] truncate text-sm text-muted-foreground'>
                   {user.email}
@@ -37,7 +45,18 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
           </div>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href='/'>Feed</Link>
+            <div>
+            
+                <div className="grid gap-1.5 leading-none">
+                  <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                     CustomFeed &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  </label>
+                </div>
+                <Checkbox
+                  checked = {feed}
+                  onCheckedChange = {handleChange}
+                  id="FeedBollean"/>
+            </div> 
           </DropdownMenuItem>
   
           <DropdownMenuItem asChild>
@@ -47,7 +66,9 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
           <DropdownMenuItem asChild>
             <Link href='/settings'>Change Name</Link>
           </DropdownMenuItem>
+
           <DropdownMenuSeparator />
+
           <DropdownMenuItem
             className='cursor-pointer'
             onSelect={(event) => {
@@ -62,3 +83,4 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
       </DropdownMenu>
     )
   }
+  

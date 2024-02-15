@@ -1,5 +1,5 @@
 'use client'
-import { getAuthSession } from '@/lib/auth'
+
 import React, { FC } from 'react'
 import { useMutation } from "@tanstack/react-query"
 import { CommentDeleteRequest } from '@/lib/validators/deleteComm'
@@ -44,7 +44,7 @@ const DeleteComment: FC<CommentDeleteProps> = ({
     },
     onSuccess: () => {
         router.refresh()
-        console.log("succes on comp")
+        
     },
 
 })
