@@ -9,7 +9,6 @@ import { toast } from '@/hooks/use-toast'
 import { useCustomToast } from '@/hooks/use-custom-toast'
 import { Button } from './ui/Button'
 
-
 interface CommentDeleteProps {
     commentId: string,
     
@@ -23,9 +22,6 @@ const DeleteComment: FC<CommentDeleteProps> = ({
         mutationFn: async ({commentId}: CommentDeleteRequest) => {
             const payload: CommentDeleteRequest = {
                 commentId,
-                
-                
-
             }
             await axios.patch(`/api/Flame/post/comment/delete`, payload)
         },
@@ -44,26 +40,18 @@ const DeleteComment: FC<CommentDeleteProps> = ({
     },
     onSuccess: () => {
         router.refresh()
-        
     },
-
 })
-
-
-
   return (
      
         <Button  
             onClick={() => 
                 DeleteComment({commentId})
-               
             }
             variant='subtle'
         > 
-                Delete
+            Delete
         </Button>                   
-    
-    
   )
 }
 

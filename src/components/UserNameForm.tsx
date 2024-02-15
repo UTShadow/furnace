@@ -17,11 +17,9 @@ import { useRouter } from "next/navigation"
 
 interface UserNameFormProps {
     user: Pick<User, 'id' | 'username'>
-    
 }
  
 const UserNameForm: FC<UserNameFormProps> = ({user}) => {
-
     const{
         handleSubmit,
         register,
@@ -90,7 +88,6 @@ const UserNameForm: FC<UserNameFormProps> = ({user}) => {
                                 {errors.name.message}
                             </p>
                         )}
-
                     </div>
                 </CardContent>
                 <CardFooter>

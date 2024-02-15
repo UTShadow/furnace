@@ -5,12 +5,6 @@ import { cn } from '@/lib/utils'
 import SignIn from '@/components/SignIn'
 import { ChevronLeft } from 'lucide-react'
 
-
-
-
-
-
-
 const page: FC = () => {
   return (
     <div className='absolute inset-0'>
@@ -22,7 +16,6 @@ const page: FC = () => {
             <ChevronLeft className='mr-2 h-4 w-4'/>
             Home
             </Link>
-            
             <SignIn/>
         </div>
     </div>

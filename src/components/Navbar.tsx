@@ -20,17 +20,16 @@ const Navbar = async () => {
             Furnace
           </p>
         </Link>
-
         <SearchBar/>
 
         {session?.user ? (
-         
           <UserAccountNav user = {session.user}/>
         ) : (
           <Link href='/sign-in' className={buttonVariants()}>
             Sign In
           </Link>
         )}
+        
       </div>
     </div>
   )

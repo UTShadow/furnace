@@ -2,12 +2,8 @@ import Navbar from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import { Arimo } from 'next/font/google'
 import Providers from '@/components/Providers'
-
 import { Toaster } from '@/components/ui/Toaster'
-
 import '@/styles/globals.css'
-
-
 
 export const metadata = {
   title: 'Furnace',
@@ -37,13 +33,9 @@ export default function RootLayout({
           <Providers>
           <Navbar />
           {authModal}
-          
-
           <div className='container max-w-7xl mx-auto h-full pt-12'>
             {children}
           </div>
-        
-        
           </Providers>
         <Toaster />
       </body>

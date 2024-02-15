@@ -11,7 +11,6 @@ import { toast } from "@/hooks/use-toast";
 import { useCustomToast } from "@/hooks/use-custom-toast";
 import { useRouter } from 'next/navigation'
 
-
 interface CreateCommentProps {
     postId: string
     replyToId?: string
@@ -33,7 +32,6 @@ const CreateComment: FC<CreateCommentProps> = ({postId, replyToId}) => {
                 text,
                 replyToId,
             }
-
             const { data } = await axios.patch(`/api/Flame/post/comment`, payload)
             return data
         },
@@ -43,7 +41,6 @@ const CreateComment: FC<CreateCommentProps> = ({postId, replyToId}) => {
                     return loginToast()
                 }
             }
-
             return toast({
                 title: ' There was aproblem',
                 description: 'Something went wrong, please try again',

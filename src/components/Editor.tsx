@@ -39,10 +39,6 @@ export const Editor: FC<EditorProps> = ({threadId}) => {
     const _titleRef = useRef<HTMLTextAreaElement>(null)
     const pathname = usePathname()
     const router = useRouter()
-
-
-   
-
     const initializeEditor = useCallback(async () => {
         const EditorJS =(await import('@editorjs/editorjs')).default
         const Header = (await import('@editorjs/header')).default
@@ -129,7 +125,6 @@ export const Editor: FC<EditorProps> = ({threadId}) => {
 
         if(isMounted) {
             init()
-
             return() => {
                 ref.current?.destroy()
                 ref.current = undefined

@@ -8,12 +8,8 @@ import { formatTimeToNow } from "@/lib/utils"
 import { CachedPost } from "@/types/redis"
 import { Vote, Post, User } from "@prisma/client"
 import { ArrowBigUp, Loader2, ArrowBigDown } from "lucide-react"
-
-
 import { notFound } from 'next/navigation'
 import { Suspense } from "react"
-
-
 
 interface PageProps {
     params: {

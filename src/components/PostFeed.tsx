@@ -58,9 +58,7 @@ const PostFeed: FC<PostFeedProps> = ({initialPosts, threadName}) => {
 
         const currentVote = post.votes.find(
                 (vote) => vote.userId === session?.user.id
-            )
-
-        
+        )
         if(index === posts.length - 1){
             return (
                 <li key={post.id} ref= {ref}>
@@ -83,7 +81,6 @@ const PostFeed: FC<PostFeedProps> = ({initialPosts, threadName}) => {
                 commentAmt={post.comments.length} 
                 post={post} 
                 threadName={post.thread.name}
-
                 />
             )
         }

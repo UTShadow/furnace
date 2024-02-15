@@ -6,8 +6,6 @@ import { buttonVariants } from './ui/Button'
 
 const ToFeedButton = () => {
   const pathname = usePathname()
-
-
   const threadPath = getThreadPath(pathname)
 
   return (
@@ -17,10 +15,8 @@ const ToFeedButton = () => {
     </a>
   )
 }
-
 const getThreadPath = (pathname: string) => {
   const splitPath = pathname.split('/')
-
   if (splitPath.length === 3) return '/'
   else if (splitPath.length > 3) return `/${splitPath[1]}/${splitPath[2]}`
   // default path, in case pathname does not match expected format

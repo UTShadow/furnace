@@ -19,18 +19,14 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
     isSubscribed,
     threadName,
 }: SubscribeLeaveToggleProps) => {
-
-    
     const { toast } = useToast()
     const { loginToast } = useCustomToast()
     const router = useRouter()
-
     const {mutate: subscribe, isLoading: isSubLoading} = useMutation({
         mutationFn: async ()=> {
             const payload: SubscribeToThreadPayload = {
                  threadId,
             }
-
             const {data} = await axios.post('/api/Flame/subscribe', payload)
             return data as string
         },
@@ -40,7 +36,6 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
                     return loginToast()
                 }
             }
-
             return toast({
                 title: ' There was aproblem',
                 description: 'Something went wrong, please try again',
@@ -62,7 +57,6 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
             const payload: SubscribeToThreadPayload = {
                  threadId,
             }
-
             const {data} = await axios.post('/api/Flame/unsubscribe', payload)
             return data as string
         },
@@ -72,7 +66,6 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
                     return loginToast()
                 }
             }
-
             return toast({
                 title: ' There was aproblem',
                 description: 'Something went wrong, please try again',
@@ -89,7 +82,6 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
             })
         },
     })
-
   return isSubscribed ? (
   <Button isLoading = {isUnSubLoading} onClick = {() => unSubscribe()} className='w-full mt-1 mb-4'>Leave comunity</Button>
   ) : (

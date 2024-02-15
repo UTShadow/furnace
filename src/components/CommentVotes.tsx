@@ -31,9 +31,6 @@ const CommentVote: FC <CommentVoteProps> = ({
     const [votesAmt, setVotesAmt] = useState<number>(initialVotesAmt)
     const [currentVote, setCurrentVote] =useState(initialVote)
     const prevVote = usePrevious(currentVote)
-    
-   
-
     const {mutate: vote} = useMutation({
         mutationFn: async (voteType: VoteType) => {
             const payload: CommentVoteRequest = {
@@ -73,7 +70,6 @@ const CommentVote: FC <CommentVoteProps> = ({
         }
     })
 
-
     return ( 
     <div className="flex gap-1">
         <Button onClick={() => vote('UP')} size='sm' variant='ghost' aria-label='upvote'>
@@ -82,7 +78,6 @@ const CommentVote: FC <CommentVoteProps> = ({
                 })}
             />
         </Button>
-
         <p className="text-center py-2 font-medium text-sm text-zinc-900">
             {votesAmt}
         </p>

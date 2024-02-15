@@ -13,8 +13,6 @@ const SignIn = () => {
                 By continuing, you are setting up a Furnace account and agree to our
                 User Agreement and Privacy Policy.
             </p>
-            
-
             < UserAuthForm />
             <p className='px-8 text-center text-sm text-zinc-700' >
                 New to Furnace?{' '}

@@ -2,17 +2,13 @@
 import { FC, useRef } from "react"
 import { Post, User, Vote } from '@prisma/client'
 import { formatTimeToNow } from "@/lib/utils"
-
 import EditorOutput from "./EditorOutput"
 import PostVoteClient from "./post-vote/PostVoteClient"
 import { MessageSquare } from "lucide-react"
 
-
-
 type PartialVote = Pick<Vote, 'type'>
 
 interface PostProps {
-    
       threadName: string
       post: Post & {
         author: User
@@ -21,7 +17,6 @@ interface PostProps {
       commentAmt: number
       votesAmt: number
       currentVote?: PartialVote
-     
 }
  
 const Post: FC<PostProps> = ({
@@ -74,10 +69,9 @@ const Post: FC<PostProps> = ({
             <a 
                 className="w-fit flex items-center gap-2"
                 href={`/f/${threadName}/post/${post.id}`}>
-                    <MessageSquare className="h-4 w-4"/> {commentAmt} comments
-                    
+                    <MessageSquare className="h-4 w-4"/> 
+                        {commentAmt} comments     
             </a>
-
         </div>
     </div> 
     )

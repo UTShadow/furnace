@@ -5,10 +5,6 @@ import { cn } from '@/lib/utils'
 import SignUp from '@/components/SignUp'
 import { ChevronLeft } from 'lucide-react'
 
-
-
-
-
 const page: FC = () => {
   return (
     <div className='absolute inset-0'>

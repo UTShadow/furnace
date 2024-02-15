@@ -37,8 +37,6 @@ const page = async ({ params }: pageProps ) => {
         <Editor threadId={thread.id}/>
 
         <div className='w-full flex flex-col justify-end'>
-            
-        
             <Button type='submit' className='w-full py-2' form='thread-post-form'>
                 Post
             </Button>

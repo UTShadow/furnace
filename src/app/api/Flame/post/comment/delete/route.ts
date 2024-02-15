@@ -17,21 +17,12 @@ export async function PATCH(req: Request) {
         if (!session?.user) {
             return new Response('Unauthorized', { status: 401 })
         }
-       
-
         await db.comment.delete({
             where:{
                 id: commentId,
                 
-            }
-            
-            
+            }    
         })
-    
-
-
-       
-    
 
         return new Response('OK')
     } catch (error) {

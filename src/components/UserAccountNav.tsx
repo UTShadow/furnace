@@ -44,7 +44,7 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
             </div>
           </div>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
+          {/*<DropdownMenuItem asChild>  // for future to solve problem with empty customfeed
             <div>
             
                 <div className="grid gap-1.5 leading-none">
@@ -57,7 +57,7 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
                   onCheckedChange = {handleChange}
                   id="FeedBollean"/>
             </div> 
-          </DropdownMenuItem>
+            </DropdownMenuItem>*/}
   
           <DropdownMenuItem asChild>
             <Link href='/f/create'>Create Community</Link>

@@ -9,19 +9,13 @@ import { Users } from "lucide-react"
 import debounce from "lodash.debounce"
 import { useOnClickOutside } from "@/hooks/use-on-click-outside"
 
-
-
-interface SearchBarProps {
-    
-}
+interface SearchBarProps {}
  
 const SearchBar: FC<SearchBarProps> = ({}) => {
     const [input, setInput] = useState<string>('')
     const router = useRouter()
     const commandRef = useRef<HTMLDivElement>(null)
     const pathname = usePathname() 
-   
-
     const {
         data: queryResults,
         refetch,
