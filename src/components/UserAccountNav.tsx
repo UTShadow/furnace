@@ -25,7 +25,7 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
         <DropdownMenuTrigger>
           <UserAvatar
             user={{ name: user.name || null, image: user.image || null }}
-            className='h-8 w-8'
+            className='h-12 w-12'
           />
         </DropdownMenuTrigger>
         <DropdownMenuContent className='bg-white' align='end'>

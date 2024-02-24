@@ -11,11 +11,11 @@ const Navbar = async () => {
   const session = await getAuthSession()
   
   return (
-    <div className='fixed top-0 inset-x-0 h-fit bg-orange-500 border-b-2 border-zinc-700 z-[10] py-2'>
-      <div className='container max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
+    <div className='fixed top-0 inset-x-0 h-fit bg-orange-500 border-b-2 border-zinc-700 z-[10] pt-2 pb-1'>
+      <div className='container max-w-7xl h-full mx-auto flex place-items-center justify-between gap-2'>
         
         <Link href='/' className='flex gap-2 items-center'>
-          <Icons.logo className='h-10 w-10 sm:h-12 sm:w-12'/>
+          <Icons.logo className='h-14 w-14'/>
           <p className='hidden text-zinc-800 text-4xl font-medium md:block'>
             Furnace
           </p>
